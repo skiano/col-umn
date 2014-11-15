@@ -1,7 +1,8 @@
 
-var makeGrid = require('../lib/')({
-  supportOptions: ['a','b','c']
-});
+var makeGrid = require('../lib/')
+// ({
+//   supportOptions: ['a','b','c']
+// });
 
 var grid = makeGrid();
 
@@ -31,5 +32,3 @@ grid
 grid.render(function (rootColumn) {
   console.log(rootColumn)
 });
-
-grid.hello();
