@@ -1,36 +1,62 @@
 
-var makeGrid = require('../lib/')({
-  setModule: 'module',
+
+var ChainGrid = require('../lib/index');
+
+function testRender (rootColumn) {
+  console.log(JSON.stringify(rootColumn, null, 2));
+}
+
+/*
+ * Example configuration for allowing list option
+ *
+ */
+
+var makeGrid_A = ChainGrid({
+  setModule: {
+    name: 'modules',
+    setter: function (modules, newModule) {
+      if (modules) {
+        modules.push(newModule)
+      } else {
+        modules = [newModule];
+      }
+      return modules;
+    }
+  }
+});
+
+var gridA = makeGrid_A();
+
+gridA
+  .column(9)
+    .setModule('a')
+    .setModule('b')
+    .setModule('c')
+    ;
+
+gridA.render(testRender);
+
+/*
+ * Example configuration for allowing list option
+ *
+ */
+
+var makeGrid_B = ChainGrid({
   setRule: 'rule'
 });
 
+var gridB = makeGrid_B();
 
-var grid = makeGrid();
-
-grid
+gridB
   .column(9)
-  .setModule('a')
-  .setModule('b')
-  .setRule('bottom')
-  .setRule('right')
-  .nest()
-    .column(5)
-      .nest()
-        .column(2)
-          .nest()
-            .column(1)
-              .setModule('b')
-            .column(1)
-              .setModule('c')
-        .column(3)
-          .setModule('d')
-    .column(3)
-      .nest()
-        .column(2)
-        .column(1)
-    .column(1)
-      .setModule('f')
+    .nest()
+      .column()
+        .setRule('bottom')
+    .nest()
+      .column(5)
+        .setRule('right')
+      .column(4)
 
-grid.render(function (rootColumn) {
-  console.log(rootColumn)
-});
+gridB.render(testRender);
+
+
