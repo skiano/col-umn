@@ -49,6 +49,7 @@ var gridB = makeGrid_B();
 
 gridB
   .column(9)
+    .setRule('bottom')
     .nest()
       .column()
         .setRule('bottom')
