@@ -26,26 +26,6 @@ grid
     .column(5)
       .setModule('f')
 
-// grid.render();
-
-// var grid = makeGrid(9);
-
-// grid
-//   .setModule('a')
-//   .setRule('bottom')
-//   .setRule('right')
-//   .nest()
-//     .column(3)
-//       .nest(3)
-//         .column(2)
-//           .nest()
-//             .column(1)
-//               .setModule('b')
-//             .column(1)
-//               .setModule('c')
-//         .column(1)
-//           .setModule('d')
-//     .column(6)
-//       .setModule('e');
-
-// grid.render();
+grid.render(function (rootColumn) {
+  console.log(rootColumn)
+});
