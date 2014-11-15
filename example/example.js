@@ -3,7 +3,9 @@
 var ChainGrid = require('../lib/index');
 
 function testRender (rootColumn) {
+  console.log('-------------------------------------------')
   console.log(JSON.stringify(rootColumn, null, 2));
+  console.log('-------------------------------------------')
 }
 
 /*
