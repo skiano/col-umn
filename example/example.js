@@ -1,5 +1,7 @@
 
-var makeGrid = require('../lib/');
+var makeGrid = require('../lib/')({
+  supportOptions: ['a','b','c']
+});
 
 var grid = makeGrid();
 
