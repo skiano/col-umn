@@ -17,8 +17,4 @@ grid
       .nest()
         .column(2)
         .column(1)
-    .column(1)
-
-grid.render(function (rootColumn) {
-  console.log(rootColumn)
-});
+    .column(4) // too many !
