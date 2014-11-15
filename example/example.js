@@ -31,3 +31,5 @@ grid
 grid.render(function (rootColumn) {
   console.log(rootColumn)
 });
+
+grid.hello();
