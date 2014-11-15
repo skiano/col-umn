@@ -9,6 +9,7 @@ var grid = makeGrid();
 grid
   .column(9)
   .setModule('a')
+  .setModule('b')
   .setRule('bottom')
   .setRule('right')
   .nest()
