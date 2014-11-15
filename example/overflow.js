@@ -38,14 +38,15 @@ grid
     .column(6)
       .nest()
         .column(3)
-  //     .nest()
-  //       .column(2)
-  //       .column(4)
-  //   .column(6)
-  // .nest()
-  //   .column(3)
-  //   .column(6)
-  //   .column(3)
+        .column(3)
+      .nest()
+        .column(2)
+        .column(4)
+    .column(6)
+  .nest()
+    .column(3)
+    .column(6)
+    .column(3)
 
 
 grid.render(testRender);
