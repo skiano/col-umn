@@ -9,7 +9,7 @@ grid
   .setRule('bottom')
   .setRule('right')
   .nest()
-    .column(3)
+    .column(5)
       .nest()
         .column(2)
           .nest()
@@ -19,11 +19,11 @@ grid
               .setModule('c')
         .column(3)
           .setModule('d')
-    .column(4)
+    .column(3)
       .nest()
-        .column(3)
+        .column(2)
         .column(1)
-    .column(6)
+    .column(5)
       .setModule('f')
 
 // grid.render();
