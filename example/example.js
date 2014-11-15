@@ -1,8 +1,9 @@
 
-var makeGrid = require('../lib/')
-// ({
-//   supportOptions: ['a','b','c']
-// });
+var makeGrid = require('../lib/')({
+  setModule: 'module',
+  setRule: 'rule'
+});
+
 
 var grid = makeGrid();
 
