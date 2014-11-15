@@ -23,7 +23,7 @@ grid
       .nest()
         .column(2)
         .column(1)
-    .column(5)
+    .column(1)
       .setModule('f')
 
 grid.render(function (rootColumn) {
