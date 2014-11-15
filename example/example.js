@@ -20,7 +20,7 @@ grid
     .column(6)
       .setModule('e');
 
-grid.compile();
+grid.render();
 
 // grid.column(9)
 //   .setModule('a')
