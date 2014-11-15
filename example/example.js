@@ -5,7 +5,6 @@ var grid = makeGrid();
 
 grid
   .column(9)
-  // .nest()
   .setModule('a')
   .setRule('bottom')
   .setRule('right')
@@ -20,8 +19,12 @@ grid
               .setModule('c')
         .column(3)
           .setModule('d')
+    .column(4)
+      .nest()
+        .column(3)
+        .column(1)
     .column(6)
-      .setModule('e');
+      .setModule('f')
 
 // grid.render();
 
