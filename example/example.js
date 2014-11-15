@@ -8,16 +8,19 @@ grid.column(9)
   .setRule('bottom')
   .nest()
     .column(3)
-      .nest()
+      .nest(3)
         .column(2)
           .nest()
             .column(1)
-              .setModule('a')
-            .column(1)
               .setModule('b')
+            .column(1)
+              .setModule('c')
         .column(1)
-          .setModule('c')
+          .setModule('d')
     .column(6)
+      .setModule('e');
+
+grid.compile();
 
 // grid.column(9)
 //   .setModule('a')
