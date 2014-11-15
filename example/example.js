@@ -1,9 +1,9 @@
 
 var makeGrid = require('../lib/');
 
-var grid = makeGrid();
+var grid = makeGrid(9);
 
-grid.column(9)
+grid
   .setModule('a')
   .setRule('bottom')
   .nest()
