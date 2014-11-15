@@ -53,7 +53,7 @@ gridB
   .column(9)
     .setRule('bottom')
     .nest()
-      .column()
+      .column(9)
         .setRule('bottom')
     .nest()
       .column(5)

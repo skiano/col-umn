@@ -30,23 +30,14 @@ grid
   .column(12)
   .nest()
     .column(6)
-    .column(6)
-  .nest()
-    .column(8)
-    .column(4)
-  .nest()
-    .column(6)
       .nest()
-        .column(3)
-        .column(3)
+        .column(6)
       .nest()
         .column(2)
-        .column(4)
+        .column(2)
+        .column(2)
     .column(6)
-  .nest()
-    .column(3)
-    .column(6)
-    .column(3)
+
 
 
 grid.render(testRender);
