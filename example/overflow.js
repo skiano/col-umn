@@ -9,43 +9,71 @@ function testRender (rootColumn) {
 
 var grid = makeGrid();
 
-// grid
-//   .column(9)
-//   .nest()
-//     .column(5)
-//       .nest()
-//         .column(2)
-//           .nest()
-//             .column(1)
-//             .column(1)
-//         .column(3)
-//     .column(3)
-//       .nest()
-//         .column(2)
-//         .column(1)
-//     .column(4) // too many !
+grid
+  .nest(11)
+    .column(3)
+    .column(4)
+    .column(4)
+  .nest()
+
+
+grid
+  .column(6)
+  .option('a')
+  .nest(2)
+  (
+    grid()
+    .column(1)
+    .column(1)
+    .column(1)
+  )(
+    grid()
+    column(3)
+  )
+  .column(6)
 
 
 grid
   .column(12)
-  .nest()
-    .column(6)
-      .nest()
-        .column(6)
-      .nest()
-        .column(2)
-        .column(2)
-        .column(2)
-    .column(6)
-      .nest()
-        .column(6)
-      .nest()
-        .column(2)
-        .column(4)
-  .nest()
-    .column(8)
+    .nest(3)
     .column(4)
+    .column(4)
+    .column(4)
+      .nest(2)
+      .column(1)
+      .column(1)
+
+.column(3)
+.column(3)
+.column(3)
+.column(9)
+  .nest(3)
+  .column(3)
+  .column(3)
+  .column(3)
+.column(9)
+
+grid
+  .column(12)
+    .nest(3)
+    .column(4)
+    .column(4)
+      .nest(4)
+      .column(1)
+      .column(1)
+      .column(1)
+      .column(1)
+    .column(4)
+      .nest(2)
+      .column(1)
+      .column(1)
+
+
+12col
+  8col
+
 
 
 grid.render(testRender);
+
 
