@@ -38,7 +38,7 @@ grid
         .column(2)
     .column(6)
       .nest()
-        .column()
+        .column(6)
       .nest()
         .column(2)
         .column(4)
