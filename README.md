@@ -1,4 +1,4 @@
-col-umn
+col-umn.js
 ==========
 
 col-umn.js provides a way to describe a nested grid by taking advantage of functions.
