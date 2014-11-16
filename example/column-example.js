@@ -11,9 +11,9 @@ function render (grid) {
 }
 
 
-COL(12)('PAGE')(
+COL(12)(
   
-  COL(6)('LEFT')(
+  COL(6)(
 
     COL(6)('MODULE_A')(setRule)(COL)
 
