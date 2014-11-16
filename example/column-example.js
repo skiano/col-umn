@@ -2,7 +2,9 @@
 var COL = require('../lib/COL');
 
 
-
+function setRule (options) {
+  options.rule = 'top';
+}
 
 function render (grid) {
   console.log(JSON.stringify(grid,null,2))
@@ -13,7 +15,7 @@ COL(12)('PAGE')(
   
   COL(6)('HEADER')(
 
-    COL(6)('MODULE_A')(COL)
+    COL(6)('MODULE_A')(setRule)(COL)
 
   )(
     
