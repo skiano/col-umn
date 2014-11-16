@@ -1,7 +1,15 @@
 
 var COL = require('../lib/COL');
 
-var grid = COL(12)('PAGE')(
+
+
+
+function render (grid) {
+  console.log(JSON.stringify(grid,null,2))
+}
+
+
+COL(12)('PAGE')(
   
   COL(6)('HEADER')(
 
@@ -21,6 +29,4 @@ var grid = COL(12)('PAGE')(
 
   COL(6)('setBoring')(COL)
 
-)(COL);
-
-console.log(JSON.stringify(grid,null,2));
+)(true)(render);
