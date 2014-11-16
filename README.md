@@ -30,12 +30,25 @@ You can optionally give the column a name by passing a string to the build funct
     COL(12)('Page')(
       COL(4)('Left Rail')(COL)
     )(
-      COL(8)('Right Rail')(
-        COL(4)('Header')(COL)  
-      )(
-        COL(4)('FOOTER')(COL)
-      )(COL)
+      COL(8)('Right Rail')(COL)
     )(COL);
+
+__which translates to__
+
+    {
+      "width": 12,
+      "name": "Page",
+      "columns": [
+        {
+          "width": 4,
+          "name": "Left Rail"
+        },
+        {
+          "width": 8,
+          "name": "Right Rail"
+        }
+      ]
+    }
 
 #### Modifying Columns
 
@@ -47,8 +60,14 @@ If you pass a function to the build function it will run your function by passin
 
     g = COL(12)(useBorder)(COL);
     
-    // g now looks like this:
-    // { width: 12, options: { border: true } }
+__which translates to__
+    
+    {
+      "width": 12,
+      "options": {
+        "border": true
+      }
+    }
     
 
     
