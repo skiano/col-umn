@@ -17,8 +17,22 @@ Every column starts by calling ```COL()``` and passing in the width of the colum
 
 If you want to add a child to the column you pass a column to the build function
 
-    COL(6)(
-      COL(3)(COL)
+    COL(12)(
+      COL(4)(COL)
     )(
-      COL(3)(COL)
+      COL(8)(COL)
     )(COL);
+
+#### Naming Columns
+
+You can optionally give the column a name by passing a string to the build function. This can add clarity and makes error messages better if you have an invalid grid (more on that later)
+
+    COL(6)('Page')(
+      COL(4)('Left Rail')(COL)
+    )(
+      COL(8)('Right Rail')(COL)
+    )(COL);
+
+
+
+
