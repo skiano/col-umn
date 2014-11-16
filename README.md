@@ -33,7 +33,7 @@ You can optionally give the column a name by passing a string to the build funct
       COL(8)('Right Rail')(COL)
     )(COL);
 
-__which translates to__
+_which translates to_
 
     {
       "width": 12,
@@ -60,7 +60,7 @@ If you pass a function to the build function it will run your function by passin
 
     g = COL(12)(useBorder)(COL);
     
-__which translates to__
+_which translates to_
     
     {
       "width": 12,
