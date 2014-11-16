@@ -1,6 +1,6 @@
 {
   "name": "col-umn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "experiment in grid configuration",
   "main": "lib/index.js",
   "directories": {
