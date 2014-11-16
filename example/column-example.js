@@ -19,7 +19,7 @@ var grid = COL(12)('PAGE')(
 
 )(
 
-  COL(COL)('setBoring')(COL)
+  COL(6)('setBoring')(COL)
 
 )(COL);
 
