@@ -22,6 +22,32 @@ If you want to add a child to the column you pass a column to the build function
     )(
       COL(8)(COL)
     )(COL);
+    
+If they ever get to colplicated to read, they can be stored to variables and composed
+
+    var rail = 
+    COL(4)('Well')(
+      COL(4)('Module A')(COL)
+    )(
+      COL(4)('Module B')(COL)
+    )(COL);
+        
+    var well = 
+    COL(8)('Well')(
+      COL(4)('Module A')(COL)
+    )(
+      COL(4)('Module B')(COL)
+    )(COL);
+        
+    var header = 
+    COL(12)('Header')(COL)
+        
+    var page = 
+    COL(12)
+     (header)
+     (rail)(well)
+    (COL);
+
 
 #### Naming Columns
 
