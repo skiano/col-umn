@@ -36,3 +36,28 @@ COL(12)(
   COL(12)('FULL FOOTER')(COL)
 
 )(true)(render);
+
+
+var g = COL(6)(
+
+  COL(6)('MODULE_A')(COL)
+
+)(
+  
+  COL(5)('MODULE_B')(COL)
+
+)(
+
+  COL(1)('MODULE_B')(COL)
+
+)(COL)
+
+var build = COL(6)(
+      COL(3)(COL)
+    )(
+      COL(3)(COL)
+    )(COL);
+
+console.log(build);
+
+
