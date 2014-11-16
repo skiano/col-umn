@@ -27,10 +27,14 @@ If you want to add a child to the column you pass a column to the build function
 
 You can optionally give the column a name by passing a string to the build function. This can add clarity and makes error messages better if you have an invalid grid (more on that later)
 
-    COL(6)('Page')(
+    COL(12)('Page')(
       COL(4)('Left Rail')(COL)
     )(
-      COL(8)('Right Rail')(COL)
+      COL(8)('Right Rail')(
+        COL(4)('Header')(COL)  
+      )(
+        COL(4)('FOOTER')(COL)
+      )(COL)
     )(COL);
 
 
