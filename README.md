@@ -69,7 +69,7 @@ _which translates to_
       }
     }
     
-
+You are free to do whatever you need to do to the options obect. Storing class names, or functions, or react components or whatever else you want for when you render the grid.
     
 
 
