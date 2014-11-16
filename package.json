@@ -1,6 +1,6 @@
 {
   "name": "chain-grid",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "experiment in grid configuration",
   "main": "lib/index.js",
   "directories": {
@@ -20,6 +20,5 @@
     "url": "https://github.com/skiano/chain-grid/issues"
   },
   "homepage": "https://github.com/skiano/chain-grid",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
