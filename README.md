@@ -10,9 +10,9 @@ this is what a grid with no column options might look like
 
     grid
       .column(12)
-        .nest()
+        .nest(2)
           .column(6)
           .column(6)
-        .nest()
+        .nest(1)
           .column(12)
 
