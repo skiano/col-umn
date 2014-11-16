@@ -37,7 +37,14 @@ grid
         .column(2)
         .column(2)
     .column(6)
-
+      .nest()
+        .column(6)
+      .nest()
+        .column(2)
+        .column(4)
+  .nest()
+    .column(8)
+    .column(4)
 
 
 grid.render(testRender);
