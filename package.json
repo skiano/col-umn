@@ -1,5 +1,5 @@
 {
-  "name": "chain-grid",
+  "name": "col-umn",
   "version": "0.1.0",
   "description": "experiment in grid configuration",
   "main": "lib/index.js",
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/skiano/chain-grid.git"
+    "url": "https://github.com/skiano/col-umn.git"
   },
   "author": "Greg Skiano",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/skiano/chain-grid/issues"
+    "url": "https://github.com/skiano/col-umn/issues"
   },
-  "homepage": "https://github.com/skiano/chain-grid",
+  "homepage": "https://github.com/skiano/col-umn",
   "dependencies": {}
 }
