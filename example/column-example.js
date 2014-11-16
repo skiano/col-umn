@@ -57,13 +57,25 @@ function useBorder (options) {
   options.border = true;
 }
 
-var build = 
-COL(12)('Page')(
-  COL(4)('Left Rail')(COL)
-)(
-  COL(8)('Right Rail')(COL)
-)(COL);
+var rail = COL(4)('Well')(
+      COL(4)('Module A')(COL)
+    )(
+      COL(4)('Module B')(COL)
+    )(COL)
+    
+var well = COL(8)('Well')(
+      COL(4)('Module A')(COL)
+    )(
+      COL(4)('Module B')(COL)
+    )(COL)
+    
+var header = COL(12)('Header')(COL)
+    
+var page = COL(12)
+             (header)
+             (rail)(well)
+           (COL)
 
-console.log(JSON.stringify(build,null,2));
+console.log(JSON.stringify(page,null,2));
 
 
