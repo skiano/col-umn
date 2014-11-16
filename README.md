@@ -37,6 +37,22 @@ You can optionally give the column a name by passing a string to the build funct
       )(COL)
     )(COL);
 
+#### Modifying Columns
+
+If you pass a function to the build function it will run your function by passing the current columns options as the first argument. (it will also pass the children of the column as the second argument if there are any)
+
+    function useBorder (options) {
+      options.border = true;
+    }
+
+    g = COL(12)(useBorder)(COL);
+    
+    // g now looks like this:
+    // { width: 12, options: { border: true } }
+    
+
+    
+
 
 
 
