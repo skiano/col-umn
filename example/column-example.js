@@ -52,12 +52,18 @@ var g = COL(6)(
 
 )(COL)
 
-var build = COL(6)(
-      COL(3)(COL)
-    )(
-      COL(3)(COL)
-    )(COL);
 
-console.log(build);
+function useBorder (options) {
+  options.border = true;
+}
+
+var build = 
+COL(12)('Page')(
+  COL(4)('Left Rail')(COL)
+)(
+  COL(8)('Right Rail')(COL)
+)(COL);
+
+console.log(JSON.stringify(build,null,2));
 
 
