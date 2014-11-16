@@ -1,7 +1,7 @@
 COL-UMN
 ==========
 
-col-umn.js describes grids functionally.
+col-umn.js provides a way to describe a nested grid by taking advantage of functions.
 
 ### Getting Started
 
