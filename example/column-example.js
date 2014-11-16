@@ -13,7 +13,7 @@ function render (grid) {
 
 COL(12)('PAGE')(
   
-  COL(6)('HEADER')(
+  COL(6)('LEFT')(
 
     COL(6)('MODULE_A')(setRule)(COL)
 
@@ -23,12 +23,16 @@ COL(12)('PAGE')(
 
   )(
 
-    COL(1)('MODULE_B')(COL)
+    COL(1)('MODULE_B')(setRule)(COL)
 
   )(COL)
 
 )(
 
-  COL(6)('setBoring')(COL)
+  COL(6)('RIGHT')(COL)
+
+)(
+
+  COL(12)('FULL FOOTER')(COL)
 
 )(true)(render);
