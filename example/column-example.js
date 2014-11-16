@@ -57,24 +57,13 @@ function useBorder (options) {
   options.border = true;
 }
 
-var rail = COL(4)('Well')(
-      COL(4)('Module A')(COL)
-    )(
-      COL(4)('Module B')(COL)
-    )(COL)
-    
-var well = COL(8)('Well')(
-      COL(4)('Module A')(COL)
-    )(
-      COL(4)('Module B')(COL)
-    )(COL)
-    
-var header = COL(12)('Header')(COL)
-    
-var page = COL(12)
-             (header)
-             (rail)(well)
-           (COL)
+var rail = COL(4)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
+var well = COL(8)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
+var header = COL(12)('Header')(COL);
+var page = COL(12)(header)(rail)(well)(COL);
+
+// what it might look like minified
+// var r=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),w=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),h=C(x)(a)(C),p=C(x)(h)(r)(w)(C);
 
 console.log(JSON.stringify(page,null,2));
 
