@@ -19,7 +19,7 @@ COL(12)('PAGE')(
 
   )(
     
-    COL(5)('MODULE_B')(COL)
+    COL(9)('MODULE_B')(COL)
 
   )(
 
