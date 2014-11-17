@@ -40,31 +40,32 @@ COL(12)(
 
 var g = COL(6)(
 
-  COL(6)('MODULE_A')(COL)
+  COL(6)('MODULE_A')()
 
 )(
   
-  COL(5)('MODULE_B')(COL)
+  COL(5)('MODULE_B')()
 
 )(
+  COL(1)('MODULE_B')()
 
-  COL(1)('MODULE_B')(COL)
+)()
 
-)(COL)
+console.log(JSON.stringify(g,null,2));
 
 
-function useBorder (options) {
-  options.border = true;
-}
+// function useBorder (options) {
+//   options.border = true;
+// }
 
-var rail = COL(4)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
-var well = COL(8)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
-var header = COL(12)('Header')(COL);
-var page = COL(12)(header)(rail)(well)(COL);
+// var rail = COL(4)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
+// var well = COL(8)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
+// var header = COL(12)('Header')(COL);
+// var page = COL(12)(header)(rail)(well)(COL);
 
 // what it might look like minified
 // var r=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),w=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),h=C(x)(a)(C),p=C(x)(h)(r)(w)(C);
 
-console.log(JSON.stringify(page,null,2));
+// console.log(JSON.stringify(page,null,2));
 
 
