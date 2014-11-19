@@ -29,7 +29,7 @@ var build = col(6)
         )
     );
 
-build(true)(function (err, grid) {
+build(true, function (err, grid) {
   console.log(JSON.stringify(grid,null,2))
 })
 
