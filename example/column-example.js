@@ -7,7 +7,7 @@ function svc (name) {
 
     setTimeout(function(){
 
-      column[name] = true;
+      column.setOption(name, 'true');
 
       cb(null)
 
@@ -25,7 +25,7 @@ var build = col(6)
         (
         col(3)(svc('SVC-D'))
         )( 
-        col(3)(svc('SVC-D')) 
+        col(3)(svc('SVC-D'))
         )
     );
 
