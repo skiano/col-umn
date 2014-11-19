@@ -1,25 +1,36 @@
 
-var col = require('../lib/COL');
+var col = require('../lib/col-umn');
 
-function setContent (options) {
-  options.content = true;
+function testQueue (column) {
+  console.log('testQueue', column);
 }
 
-var build = col(6)
-    (
-    col(4)(setContent)
-    )(
-    col(2)(setContent)
-    )(
-    col(6)(setContent)
-        (
-        col(3)(setContent)
-        )( 
-        col(3)(setContent) 
-        )
-    );
+var test = col(6)(testQueue)(
+  col(4)(testQueue)
+)();
 
-console.log(JSON.stringify(build(),null,2))
+console.log(test)
+
+
+// function setContent (options) {
+//   options.content = true;
+// }
+
+// var build = col(6)
+//     (
+//     col(4)(setContent)
+//     )(
+//     col(2)(setContent)
+//     )(
+//     col(6)(setContent)
+//         (
+//         col(3)(setContent)
+//         )( 
+//         col(3)(setContent) 
+//         )
+//     );
+
+// console.log(JSON.stringify(build(),null,2))
 
 
 

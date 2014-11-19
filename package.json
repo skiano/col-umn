@@ -2,7 +2,7 @@
   "name": "col-umn",
   "version": "0.1.1",
   "description": "experiment in grid configuration",
-  "main": "lib/index.js",
+  "main": "lib/col-umn.js",
   "directories": {
     "example": "example",
     "test": "test"
