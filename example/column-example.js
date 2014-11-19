@@ -8,12 +8,35 @@ function svc (name) {
     setTimeout(function(){
 
       column.setOption(name, 'true');
+      cb(null)
+
+    }, 1000);
+  }
+}
+
+function multiSvc (name) {
+  return function (column, cb) {
+
+    setTimeout(function(){
+
+      column.setOption(name, function (value) {
+        if (value) {
+          value.push(value.length);
+        } else {
+          value = [0];
+        }
+        return value;
+      });
 
       cb(null)
 
     }, 1000);
   }
 }
+
+
+
+
 
 var build = col(6)
     (
@@ -25,7 +48,7 @@ var build = col(6)
         (
         col(3)(svc('SVC-D'))
         )( 
-        col(3)(svc('SVC-D'))
+        col(3)(multiSvc('SVC-D'))(multiSvc('SVC-D'))(multiSvc('SVC-D'))
         )
     );
 
