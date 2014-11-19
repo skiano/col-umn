@@ -1,50 +1,37 @@
 
 var col = require('../lib/col-umn');
 
-function testQueue (column, cb) {
+function svc (name) {
 
-  console.log('immediate');
-  
-  setTimeout(function () {
+  return function (column, cb) {
 
-    column.awesome = true;
-    console.log('testQueue');
-    cb(null);
+    setTimeout(function(){
 
-  }, 1000);
+      column[name] = true;
 
+      cb(null)
+
+    }, 1000);
+  }
 }
 
-var c = col(6)(testQueue)(testQueue)(
-  col(4)(testQueue)
-)(true);
+var build = col(6)
+    (
+    col(4)(svc('SVC-A'))(svc('SVC-A-2'))
+    )(
+    col(2)(svc('SVC-B'))
+    )(
+    col(6)(svc('SVC-C'))
+        (
+        col(3)(svc('SVC-D'))
+        )( 
+        col(3)(svc('SVC-D')) 
+        )
+    );
 
-c(function (column) {
-
-  console.log(JSON.stringify(column,null,2));
-
-});
-
-
-// function setContent (options) {
-//   options.content = true;
-// }
-
-// var build = col(6)
-//     (
-//     col(4)(setContent)
-//     )(
-//     col(2)(setContent)
-//     )(
-//     col(6)(setContent)
-//         (
-//         col(3)(setContent)
-//         )( 
-//         col(3)(setContent) 
-//         )
-//     );
-
-// console.log(JSON.stringify(build(),null,2))
+build(true)(function (err, grid) {
+  console.log(JSON.stringify(grid,null,2))
+})
 
 
 
