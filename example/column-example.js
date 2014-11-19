@@ -1,8 +1,9 @@
 
 var col = require('../lib/col-umn');
 
-function testQueue (column) {
+function testQueue (column, cb) {
   console.log('testQueue', column);
+  cb(null);
 }
 
 var test = col(6)(testQueue)(
