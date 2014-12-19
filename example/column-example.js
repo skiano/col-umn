@@ -64,17 +64,17 @@ function myFilter (data) {
 
 var render = col(6)
     (
-    col(4)(svc('dataA1'))(svc('dataA2'))
+      col(4)(svc('dataA1'))(svc('dataA2'))
     )(
-    col(2)(hasSync)
+      col(2)(hasSync)
     )(
-    col(6)(svc('dataC'))
+      col(6)(svc('dataC'))
         (
-        col(3, myFilter)(multiSvc('cats'))
+          col(3, myFilter)(multiSvc('cats'))
         )( 
-        col(3)(multiSvc('dogs'))(multiSvc('rabbits'))(multiSvc('horses'))
+          col(3)(multiSvc('dogs'))(multiSvc('rabbits'))(multiSvc('horses'))
         )
-    );
+      );
 
 var schemaA = {
   dataA1: 'A1 is great',
