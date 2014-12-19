@@ -1,71 +1,119 @@
 
-var COL = require('../lib/COL');
+var col = require('../lib/col-umn');
 
+function svc (name) {
 
-function setRule (options) {
-  options.rule = 'top';
+  return function (column, outerData, cb) {
+
+    setTimeout(function(){
+
+      if (outerData.hasOwnProperty(name)) {
+        
+        column.setOption(name, outerData[name]);
+        cb(null);
+
+      } else {
+
+        cb(new Error('Data missing ' + name));
+
+      }
+
+    }, 1000);
+  }
 }
 
-function render (grid) {
+function multiSvc (name) {
+  
+  return function (column, outerData, cb) {
+
+    setTimeout(function(){
+
+      var amount = outerData[name];
+
+      if (amount < 3) {
+        cb(new Error('Not enough ' + name));
+      }
+
+      column.setOption('animals', function (value) {
+        
+        if (!value) {
+          value = {};
+        }
+
+        value[name] = amount;
+
+        return value;
+
+      });
+
+      cb(null)
+
+    }, 1000);
+  }
+}
+
+var render = col(6)
+    (
+    col(4)(svc('dataA1'))(svc('dataA2'))
+    )(
+    col(2)(svc('dataB'))
+    )(
+    col(6)(svc('dataC'))
+        (
+        col(3)(multiSvc('cats'))
+        )( 
+        col(3)(multiSvc('dogs'))(multiSvc('rabbits'))(multiSvc('horses'))
+        )
+    );
+
+var schemaA = {
+  dataA1: 'A1 is great',
+  dataA2: 'A2 is great',
+  dataB: 'B is ok',
+  dataC: 'C is not so good',
+  cats: 20,
+  dogs: 10,
+  rabbits: 5,
+  horses: 15
+}
+
+var schemaB = {
+  // dataA1: 'A1 is great',
+  dataA2: 'A2 is great',
+  dataB: 'B is ok',
+  dataC: 'C is not so good',
+  cats: 0,
+  dogs: 1,
+  rabbits: 10,
+  horses: 30
+}
+
+
+render(schemaA, function (err, grid) {
+
+  console.log('Schema A:');
   console.log(JSON.stringify(grid,null,2))
-}
+
+  console.log('')
+  console.log('')
+
+  render(schemaB, function (err, grid) {
+
+    if (err) {
+      console.log(err)
+    }
+
+    console.log('Schema B:');
+    console.log(JSON.stringify(grid,null,2))
+
+  });
+
+});
 
 
-COL(12)(
-  
-  COL(6)(
-
-    COL(6)('MODULE_A')(setRule)(COL)
-
-  )(
-    
-    COL(5)('MODULE_B')(COL)
-
-  )(
-
-    COL(1)('MODULE_B')(setRule)(COL)
-
-  )(COL)
-
-)(
-
-  COL(6)('RIGHT')(COL)
-
-)(
-
-  COL(12)('FULL FOOTER')(COL)
-
-)(true)(render);
 
 
-var g = COL(6)(
-
-  COL(6)('MODULE_A')()
-
-)(
-  
-  COL(5)('MODULE_B')()
-
-)(
-  COL(1)('MODULE_B')()
-
-)()
-
-console.log(JSON.stringify(g,null,2));
 
 
-// function useBorder (options) {
-//   options.border = true;
-// }
-
-// var rail = COL(4)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
-// var well = COL(8)('Well')(COL(4)('Module A')(COL))(COL(4)('Module B')(COL))(COL);
-// var header = COL(12)('Header')(COL);
-// var page = COL(12)(header)(rail)(well)(COL);
-
-// what it might look like minified
-// var r=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),w=C(x)(a)(C(x)(a)(C))(C(x)(a)(C))(C),h=C(x)(a)(C),p=C(x)(h)(r)(w)(C);
-
-// console.log(JSON.stringify(page,null,2));
 
 
