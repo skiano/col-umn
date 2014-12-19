@@ -5,7 +5,7 @@ function svc (name) {
 
   console.log('svc start')
 
-  return function (column, cb) {
+  return function (column, outerData, cb) {
 
     setTimeout(function(){
 
@@ -19,7 +19,7 @@ function svc (name) {
 }
 
 function multiSvc (name) {
-  return function (column, cb) {
+  return function (column, outerData, cb) {
 
     console.log('multiSvc start')
 
