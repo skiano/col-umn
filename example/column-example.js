@@ -3,15 +3,11 @@ var col = require('../lib/col-umn');
 
 function svc (name) {
 
-  console.log('svc start')
-
   return function (column, outerData, cb) {
 
     setTimeout(function(){
 
-      column.setOption(name, 'true');
-
-      console.log('svc finish')
+      column.setOption(name, outerData[name]);
       cb(null)
 
     }, 1000);
@@ -21,20 +17,21 @@ function svc (name) {
 function multiSvc (name) {
   return function (column, outerData, cb) {
 
-    console.log('multiSvc start')
-
     setTimeout(function(){
 
-      column.setOption(name, function (value) {
+      var amount = outerData[name];
+
+      column.setOption('animals', function (value) {
         if (value) {
-          value.push(value.length);
+          value[name] = amount;
         } else {
-          value = [0];
+          value = {
+            name: amount
+          };
         }
         return value;
       });
 
-      console.log('multiSvc finish')
       cb(null)
 
     }, 1000);
@@ -43,20 +40,27 @@ function multiSvc (name) {
 
 var build = col(6)
     (
-    col(4)(svc('SVC-A'))(svc('SVC-A-2'))
+    col(4)(svc('dataA1'))(svc('dataA2'))
     )(
-    col(2)(svc('SVC-B'))
+    col(2)(svc('dataB'))
     )(
-    col(6)(svc('SVC-C'))
+    col(6)(svc('dataC'))
         (
-        col(3)(svc('SVC-D'))
+        col(3)(svc('cats'))
         )( 
-        col(3)(multiSvc('SVC-D'))(multiSvc('SVC-D'))(multiSvc('SVC-D'))
+        col(3)(multiSvc('dogs'))(multiSvc('rabits'))(multiSvc('horses'))
         )
     );
 
 var schema = {
-  allData: true
+  dataA1: 'A1 is great',
+  dataA2: 'A2 is great',
+  dataB: 'B is ok',
+  dataC: 'C is not so good',
+  cats: 20,
+  dogs: 10,
+  rabits: 3,
+  horses: 15
 }
 
 build(schema, function render (err, grid) {
