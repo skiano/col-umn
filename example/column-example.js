@@ -14,8 +14,6 @@ function svc (name) {
 
       } else {
 
-        console.log('hello', name)
-
         cb(new Error('Data missing ' + name));
 
       }
@@ -25,11 +23,16 @@ function svc (name) {
 }
 
 function multiSvc (name) {
+  
   return function (column, outerData, cb) {
 
     setTimeout(function(){
 
       var amount = outerData[name];
+
+      if (amount < 3) {
+        cb('Not enough ' + name);
+      }
 
       column.setOption('animals', function (value) {
         
@@ -72,7 +75,7 @@ var schemaA = {
   dataC: 'C is not so good',
   cats: 20,
   dogs: 10,
-  rabbits: 3,
+  rabbits: 5,
   horses: 15
 }
 
@@ -83,8 +86,8 @@ var schemaB = {
   dataC: 'C is not so good',
   cats: 0,
   dogs: 1,
-  rabbits: 2,
-  horses: 3
+  rabbits: 10,
+  horses: 30
 }
 
 
