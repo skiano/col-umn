@@ -7,95 +7,14 @@ col-umn.js provides a way to describe a nested grid by taking advantage of funct
 
 Here is what the basic setup looks like:
 
-    var COL = require('col-umn');
-    
-    var grid = COL(6)(COL);
+    var gridA = COL(6);
 
-Every column starts by calling ```COL()``` and passing in the width of the column. This then returns a build function that allows you to do something do the column. That build function will continue to return itself until the ```COL``` function is passed into it to close the column. At that point the completed column is returned.
-
-#### Nesting Columns
-
-If you want to add a child to the column you pass a column to the build function
-
-    COL(12)(
-      COL(4)(COL)
-    )(
-      COL(8)(COL)
-    )(COL);
-    
-If they ever get to colplicated to read, they can be stored to variables and composed
-
-    var rail = 
-    COL(4)('Well')(
-      COL(4)('Module A')(COL)
-    )(
-      COL(4)('Module B')(COL)
-    )(COL);
-        
-    var well = 
-    COL(8)('Well')(
-      COL(4)('Module A')(COL)
-    )(
-      COL(4)('Module B')(COL)
-    )(COL);
-        
-    var header = 
-    COL(12)('Header')(COL)
-        
-    var page = 
-    COL(12)
-     (header)
-     (rail)(well)
-    (COL);
-
-
-#### Naming Columns
-
-You can optionally give the column a name by passing a string to the build function. This can add clarity and makes error messages better if you have an invalid grid (more on that later)
-
-    COL(12)('Page')(
-      COL(4)('Left Rail')(COL)
-    )(
-      COL(8)('Right Rail')(COL)
-    )(COL);
-
-_which translates to_
+This means
 
     {
-      "width": 12,
-      "name": "Page",
-      "columns": [
-        {
-          "width": 4,
-          "name": "Left Rail"
-        },
-        {
-          "width": 8,
-          "name": "Right Rail"
-        }
-      ]
+      "width": 6
     }
 
-#### Modifying Columns
-
-If you pass a function to the build function it will run your function by passing the current columns options as the first argument. (it will also pass the children of the column as the second argument if there are any)
-
-    function useBorder (options) {
-      options.border = true;
-    }
-
-    g = COL(12)(useBorder)(COL);
-    
-_which translates to_
-    
-    {
-      "width": 12,
-      "options": {
-        "border": true
-      }
-    }
-    
-You are free to do whatever you need to do to the options obect. You can put whatever yo want in the options -- class names, or functions, or react components or whatever else you want for when you render the grid.
     
 
 
