@@ -109,19 +109,12 @@ render(schemaA, function (err, grid) {
 
   console.log('Schema A:');
   console.log(JSON.stringify(grid,null,2))
+  console.log('\n\n\n');
 
-  console.log('')
-  console.log('')
-
-  render(schemaB, function (err, grid) {
-
-    if (err) {
-      console.log(err)
-    }
-
+  render(schemaB, function (errs, grid) {
     console.log('Schema B:');
+    if (err) { console.log('Errors:', errs) }
     console.log(JSON.stringify(grid,null,2))
-
   });
 
 });
