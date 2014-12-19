@@ -36,7 +36,7 @@ g = COL(6)
         )(
         COL(2)
         )
-        (null);
+        ();
 
 
 g(testRender);
