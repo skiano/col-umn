@@ -1,11 +1,12 @@
 
 var col = require('../lib/col-umn');
+var asyncSvc = require('../lib/asyncSvc');
 
 function svc (name) {
 
-  return function (column, outerData, cb) {
+  return asyncSvc(function nameSvc (column, outerData, cb) {
 
-    setTimeout(function(){
+    setTimeout(function (){
 
       if (outerData.hasOwnProperty(name)) {
         
@@ -19,12 +20,12 @@ function svc (name) {
       }
 
     }, 1000);
-  }
+  });
 }
 
 function multiSvc (name) {
   
-  return function (column, outerData, cb) {
+  return asyncSvc(function animalSvc (column, outerData, cb) {
 
     setTimeout(function(){
 
@@ -49,7 +50,8 @@ function multiSvc (name) {
       cb(null)
 
     }, 1000);
-  }
+  });
+
 }
 
 var render = col(6)
@@ -97,16 +99,16 @@ render(schemaA, function (err, grid) {
   console.log('')
   console.log('')
 
-  render(schemaB, function (err, grid) {
+  // render(schemaB, function (err, grid) {
 
-    if (err) {
-      console.log(err)
-    }
+  //   if (err) {
+  //     console.log(err)
+  //   }
 
-    console.log('Schema B:');
-    console.log(JSON.stringify(grid,null,2))
+  //   console.log('Schema B:');
+  //   console.log(JSON.stringify(grid,null,2))
 
-  });
+  // });
 
 });
 
