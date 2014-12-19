@@ -1,5 +1,5 @@
 
-var col = require('../');
+var COL = require('../');
 
 var i = 1;
 
@@ -9,28 +9,36 @@ function testRender (err, data) {
   console.log('');
 }
 
+var g;
 
-
-var gridA = col(6);
+var gridA = COL(6);
 
 gridA()(testRender);
 
 
-var gridB = col(6)('Awesome', true);
+var gridB = COL(6)('Awesome', true);
 
 gridB()(testRender);
 
 
-var gridB = col(6)
-                (
-                col(6)
-                )(
-                col(4)
-                )(
-                col(2)
-                );
+var g;
+
+g = COL(6)
+        (
+        COL(6)
+            (
+            COL(3)
+            )(
+            COL(3)
+            )
+        )(
+        COL(4)
+        )(
+        COL(2)
+        )
+        (null);
 
 
-gridB()(testRender);
+g(testRender);
 
 
