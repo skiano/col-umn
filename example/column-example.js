@@ -7,8 +7,8 @@ function svc (name) {
 
     setTimeout(function(){
 
-      column.setOption(name, outerData[name]);
-      cb(null)
+      // column.setOption(name, outerData[name]);
+      cb(new Error('Svc failed'));
 
     }, 1000);
   }
@@ -78,7 +78,8 @@ var schemaB = {
 
 
 build(schemaA, function render (err, grid) {
-    
+
+  console.log(err)
   console.log('Schema A:');
   console.log(JSON.stringify(grid,null,2))
 
@@ -86,7 +87,8 @@ build(schemaA, function render (err, grid) {
   console.log('')
 
   build(schemaB, function render (err, grid) {
-    
+
+    console.log(err)
     console.log('Schema B:');
     console.log(JSON.stringify(grid,null,2))
 
