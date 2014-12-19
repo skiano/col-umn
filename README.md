@@ -5,15 +5,74 @@ col-umn.js provides a way to describe a nested grid by taking advantage of funct
 
 ### Getting Started
 
-Here is what the basic setup looks like:
+Definition
 
-    var gridA = COL(6);
+    COL(6);
 
-This means
+When rendered this could be
 
     {
       "width": 6
     }
+
+Definition
+
+    COL(6)('Awesome', true)
+
+When rendered this could be
+
+    {
+      "width": 6,
+      "options": {
+        "Awesome": true
+      }
+    }
+
+Definition
+
+  COL(6)
+    (
+      COL(6)
+        (
+          COL(
+        )(
+          COL(
+        )
+    )(
+      COL(4)
+    )(
+      COL(2)
+    )
+    ();
+
+When rendered this could be
+
+    {
+      "width": 6,
+      "columns": [
+        {
+          "width": 6,
+          "columns": [
+            {
+              "width": 3
+            },
+            {
+              "width": 3
+            }
+          ]
+        },
+        {
+          "width": 4
+        },
+        {
+          "width": 2
+        }
+      ]
+    }
+
+
+
+
 
     
 
