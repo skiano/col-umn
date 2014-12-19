@@ -65,7 +65,6 @@ var schema = {
 
 build(schema, function render (err, grid) {
   
-  console.log('========================================')
   console.log(JSON.stringify(grid,null,2))
 
 })
