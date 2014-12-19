@@ -58,6 +58,10 @@ function multiSvc (name) {
 
 }
 
+function myFilter (data) {
+  return data.subData;
+}
+
 var render = col(6)
     (
     col(4)(svc('dataA1'))(svc('dataA2'))
@@ -66,7 +70,7 @@ var render = col(6)
     )(
     col(6)(svc('dataC'))
         (
-        col(3)(multiSvc('cats'))
+        col(3, myFilter)(multiSvc('cats'))
         )( 
         col(3)(multiSvc('dogs'))(multiSvc('rabbits'))(multiSvc('horses'))
         )
@@ -80,7 +84,10 @@ var schemaA = {
   cats: 20,
   dogs: 10,
   rabbits: 5,
-  horses: 15
+  horses: 15,
+  subData: {
+    cats: 'sick!'
+  }
 }
 
 var schemaB = {
@@ -91,7 +98,10 @@ var schemaB = {
   cats: 0,
   dogs: 1,
   rabbits: 10,
-  horses: 30
+  horses: 30,
+  subData: {
+    cats: 'sick!'
+  }
 }
 
 
