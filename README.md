@@ -30,19 +30,19 @@ When rendered this could be
 
 Definition
 
-  COL(6)
-    (
-      COL(6)
-        (
-          COL(
-        )(
-          COL(
-        )
-    )(
-      COL(4)
-    )(
-      COL(2)
-    )
+    COL(6)
+      (
+        COL(6)
+          (
+            COL(3)
+          )(
+            COL(3)
+          )
+      )(
+        COL(4)
+      )(
+        COL(2)
+      )
 
 When rendered this could be
 
