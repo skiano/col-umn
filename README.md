@@ -7,7 +7,7 @@ col-umn.js provides a way to describe a nested grid by taking advantage of funct
 
 Definition
 
-    COL(6);
+    COL(6)
 
 When rendered this could be
 
@@ -43,7 +43,6 @@ Definition
     )(
       COL(2)
     )
-    ();
 
 When rendered this could be
 
