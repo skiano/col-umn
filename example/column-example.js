@@ -34,10 +34,6 @@ function multiSvc (name) {
   }
 }
 
-
-
-
-
 var build = col(6)
     (
     col(4)(svc('SVC-A'))(svc('SVC-A-2'))
@@ -52,8 +48,14 @@ var build = col(6)
         )
     );
 
-build(true, function (err, grid) {
+var schema = {
+  allData: true
+}
+
+build(schema, function render (err, grid) {
+  
   console.log(JSON.stringify(grid,null,2))
+
 })
 
 
