@@ -36,13 +36,11 @@ function multiSvc (name) {
 
       column.setOption('animals', function (value) {
         
-        if (value) {
-          value[name] = amount;
-        } else {
-          value = {
-            name: amount
-          };
+        if (!value) {
+          value = {};
         }
+
+        value[name] = amount;
 
         return value;
 
