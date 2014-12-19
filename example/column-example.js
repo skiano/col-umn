@@ -23,6 +23,10 @@ function svc (name) {
   });
 }
 
+function hasSync (column, outerData) {
+  column.setOption('hasSyncData', true);
+}
+
 function multiSvc (name) {
   
   return asyncSvc(function animalSvc (column, outerData, cb) {
@@ -58,7 +62,7 @@ var render = col(6)
     (
     col(4)(svc('dataA1'))(svc('dataA2'))
     )(
-    col(2)(svc('dataB'))
+    col(2)(hasSync)
     )(
     col(6)(svc('dataC'))
         (
@@ -99,16 +103,16 @@ render(schemaA, function (err, grid) {
   console.log('')
   console.log('')
 
-  // render(schemaB, function (err, grid) {
+  render(schemaB, function (err, grid) {
 
-  //   if (err) {
-  //     console.log(err)
-  //   }
+    if (err) {
+      console.log(err)
+    }
 
-  //   console.log('Schema B:');
-  //   console.log(JSON.stringify(grid,null,2))
+    console.log('Schema B:');
+    console.log(JSON.stringify(grid,null,2))
 
-  // });
+  });
 
 });
 
