@@ -48,26 +48,55 @@ var build = col(6)
         (
         col(3)(svc('cats'))
         )( 
-        col(3)(multiSvc('dogs'))(multiSvc('rabits'))(multiSvc('horses'))
+        col(3)(multiSvc('dogs'))(multiSvc('rabbits'))(multiSvc('horses'))
         )
     );
 
-var schema = {
+var schemaA = {
   dataA1: 'A1 is great',
   dataA2: 'A2 is great',
   dataB: 'B is ok',
   dataC: 'C is not so good',
   cats: 20,
   dogs: 10,
-  rabits: 3,
+  rabbits: 3,
   horses: 15
 }
 
-build(schema, function render (err, grid) {
-  
+
+
+var schemaB = {
+  dataA1: 'A1 is great',
+  dataA2: 'A2 is great',
+  dataB: 'B is ok',
+  dataC: 'C is not so good',
+  cats: 0,
+  dogs: 1,
+  rabbits: 2,
+  horses: 3
+}
+
+
+build(schemaA, function render (err, grid) {
+    
+  console.log('Schema A:');
   console.log(JSON.stringify(grid,null,2))
 
-})
+  console.log('')
+  console.log('')
+
+  build(schemaB, function render (err, grid) {
+    
+    console.log('Schema B:');
+    console.log(JSON.stringify(grid,null,2))
+
+  });
+
+});
+
+
+
+
 
 
 
