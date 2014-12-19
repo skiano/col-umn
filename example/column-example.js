@@ -3,11 +3,15 @@ var col = require('../lib/col-umn');
 
 function svc (name) {
 
+  console.log('svc start')
+
   return function (column, cb) {
 
     setTimeout(function(){
 
       column.setOption(name, 'true');
+
+      console.log('svc finish')
       cb(null)
 
     }, 1000);
@@ -16,6 +20,8 @@ function svc (name) {
 
 function multiSvc (name) {
   return function (column, cb) {
+
+    console.log('multiSvc start')
 
     setTimeout(function(){
 
@@ -28,6 +34,7 @@ function multiSvc (name) {
         return value;
       });
 
+      console.log('multiSvc finish')
       cb(null)
 
     }, 1000);
@@ -54,6 +61,7 @@ var schema = {
 
 build(schema, function render (err, grid) {
   
+  console.log('========================================')
   console.log(JSON.stringify(grid,null,2))
 
 })
