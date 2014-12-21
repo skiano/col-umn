@@ -19,6 +19,17 @@ By approaching this problem in a more functional way, I hope to make description
 
 ### The structure
 
+```js
+//  / Setup the column        / Render the column
+//  |____                     |__
+//  |    |                    |  |
+    COL(3)(optionA)(optionFnB)({})
+//        |__________________|
+//        |
+//        \ Setup option functions
+
+```
+
 col-umn.js exports a single function that is used to buld each level of the grid. 
 
 ### Getting started
