@@ -20,11 +20,17 @@ By approaching this problem in a more functional way, I hope to make description
 ### The structure
 
 ```js
-//  * Setup the column        * Render the column
-//  |_____                    |________________
-//  |    |                    |               |
-    COL(3)(optionA)(optionFnB)({data: [1,2,3]})
-//        |__________________|
+
+// create option functions
+optionFn = function (column) {
+  column.setOption('optionA', 3);
+}
+
+//  * Setup the column               * Render the column
+//  |_____                           |________________
+//  |    |                           |               |
+    COL(3)(optionFn)('optionB', true)({data: [1,2,3]})
+//        |_________________________|
 //        |
 //        * Setup option functions
 
