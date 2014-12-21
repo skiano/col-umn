@@ -23,11 +23,6 @@ By approaching this problem in a more functional way, I hope to make description
 
 var COL = require('col-umn');
 
-// create option functions
-optionFn = function (column) {
-  column.setOption('optionA', 3);
-}
-
 //  * Setup the column               * Render the column
 //  |_____                           |_________________________
 //  |    |                           |                        |
