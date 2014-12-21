@@ -3,7 +3,7 @@ col-umn.js
 
 _Note: this is not ready for stable use_
 
-``col-umn.js`` uses functions to describe __nested columns__ and the work _(sync or async)_ needed to fill those columns with data.
+``col-umn.js`` uses functions to describe __nested columns__ and the work __(sync or async)__ needed to fill those columns with data.
 
 ## Installation
 
@@ -45,7 +45,7 @@ optionFn = function (column) {
 
 __breaking down the structure__
 
-The ``COl`` function returns the _build function_ which is used to set options and nest other columns’ build functions.
+The ``COl`` function returns the __build function__ which is used to set options and nest other columns’ build functions.
 
 ```js
   var buildFn = COL(3) // sets up a 3 unit column and returns the 'build function'
