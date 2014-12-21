@@ -17,7 +17,7 @@ I often end up writing __JSON__ descriptions of grids for laying out complicated
 
 By approaching this problem in a more functional way, I hope to make descriptions of complicated layouts that are  compact, flexible, and expressive. I am also interested in thinking of the layout as an application and not as data.
 
-### The structure
+### Structure overview
 
 ```js
 
@@ -38,7 +38,7 @@ optionFn = function (column) {
 
 ```
 
-col-umn.js exports a single function that is used to buld each level of the grid. 
+
 
 ### Getting started
 
