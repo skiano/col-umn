@@ -1,7 +1,22 @@
 col-umn.js
 ==========
 
-col-umn.js provides a way to describe a nested grid by taking advantage of functions.
+``col-umn.js`` uses functions to describe __nested columns__ and the work _(sync or async)_ needed to fill those columns with data.
+
+## Installation
+
+node:
+
+```
+$ npm install col-umn
+```
+
+## Motivation
+
+I often end up writing __JSON__ descriptions of grids for laying out complicated pages. These descriptions can become quite complicated and usually have properties that are essentially pointers to work that needs to be done (for instance what component needs to be used).
+
+By experimenting with solving this problem in a more functional way, I am hoping to make descriptions of complicated layouts and the options associated with that are more compressed and flexible. I am also interested in the layout becoming more a part of the application and less a part of the data.
+
 
 ### The structure
 
