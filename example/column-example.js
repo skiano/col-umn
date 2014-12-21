@@ -3,7 +3,6 @@ var col = require('../lib/col-umn');
 var asyncSvc = require('../lib/asyncSvc');
 
 function svc (name) {
-
   return asyncSvc(function nameSvc (column, outerData, cb) {
 
     setTimeout(function (){
@@ -28,7 +27,6 @@ function hasSync (column, outerData) {
 }
 
 function multiSvc (name) {
-  
   return asyncSvc(function animalSvc (column, outerData, cb) {
 
     setTimeout(function(){
@@ -55,7 +53,6 @@ function multiSvc (name) {
 
     }, 1000);
   });
-
 }
 
 function myFilter (data) {
