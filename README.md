@@ -56,9 +56,7 @@ buildFn = buildFn('optionB', true);
 // and return the final data
 
 buildFn({data: [1,2,3]}, function callBack (errors, finalData) {
-
   // handle the rendered column
-
 });
 
 ```
