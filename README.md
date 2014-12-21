@@ -46,14 +46,21 @@ __breaking down the structure__
 The ``COl`` function returns the __build function__ which is used to set options and nest other columns’ build functions.
 
 ```js
-  var buildFn = COL(3) // sets up a 3 unit column and returns the 'build function'
-  
-  // the build function returns itself until
-  // it is called with an {} or undefined
-  buildFn = buildFn(optionFn) 
-  buildFn = buildFn('optionB', true)
 
-  var output = buildFn({data: [1,2,3]}) // executed the final rendered column
+// Setup a 3 unit column and return the 'build function'
+
+var buildFn = COL(3);
+  
+// The build function returns itself until
+// it is called with an {} or undefined
+
+buildFn = buildFn(optionFn);
+buildFn = buildFn('optionB', true);
+
+// Execute the final rendered column
+// and return the final data
+
+var output = buildFn({data: [1,2,3]}); 
 
 ```
 
