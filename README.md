@@ -31,10 +31,10 @@ optionFn = function (column) {
 //  * Setup the column               * Render the column
 //  |_____                           |________________
 //  |    |                           |               |
-    COL(3)(optionFn)('optionB', true)({data: [1,2,3]})
+    COL(3)(optionFn)('optionB', true)({data: [1,2,3]});
 //        |_________________________|
 //        |
-//        * Setup option functions
+//        * Setup operations to execute on render
 
 ```
 
