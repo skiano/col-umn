@@ -7,8 +7,6 @@ _Note: this is not ready for stable use_
 
 ## Installation
 
-node:
-
 ```
 $ npm install col-umn
 ```
