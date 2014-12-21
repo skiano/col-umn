@@ -5,11 +5,19 @@ col-umn.js provides a way to describe a nested grid by taking advantage of funct
 
 ### The structure
 
+col-umn.js exports a single function that is used to buld each level of the grid. 
+
+### Getting started
+
 The whole thing starts with the ``COL`` function
+
+```js
 
     var COL = require('col-umn');
     
     COL(3);
+    
+```
     
 This simply means you want a column that is 3 units wide. If this was rendered the final data would be
 
@@ -37,7 +45,7 @@ For simple option setting, like the last example you can also do this
 
     COL(3)('myOption', true); // same data as last example
 
-### Getting Started
+### more stuff
 
 Definition
 
