@@ -20,13 +20,13 @@ By approaching this problem in a more functional way, I hope to make description
 ### The structure
 
 ```js
-//  / Setup the column        / Render the column
-//  |____                     |__
-//  |    |                    |  |
-    COL(3)(optionA)(optionFnB)({})
+//  * Setup the column        * Render the column
+//  |_____                    |________________
+//  |    |                    |               |
+    COL(3)(optionA)(optionFnB)({data: [1,2,3]})
 //        |__________________|
 //        |
-//        \ Setup option functions
+//        * Setup option functions
 
 ```
 
