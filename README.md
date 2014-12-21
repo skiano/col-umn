@@ -21,6 +21,8 @@ By approaching this problem in a more functional way, I hope to make description
 
 ```js
 
+var COL = require('col-umn');
+
 // create option functions
 optionFn = function (column) {
   column.setOption('optionA', 3);
