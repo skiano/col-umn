@@ -34,7 +34,11 @@ optionFn = function (column) {
     COL(3)(optionFn)('optionB', true)({data: [1,2,3]});
 //        |_________________________|
 //        |
-//        * Setup operations to execute on render
+//        * Setup column operations to execute on render.
+//          these are anything you want to do to the column
+//          - functions that set options
+//          - simple option assignment
+//          - child columns
 
 ```
 
