@@ -35,13 +35,26 @@ optionFn = function (column) {
 //        |_________________________|
 //        |
 //        * Setup column operations to execute on render.
-//          these are anything you want to do to the column
 //          - functions that set options
 //          - simple option assignment
 //          - child columns
 
 ```
 
+__breaking down the structure__
+
+```js
+  
+  var buildFn = COL(3) // sets up a 3 unit column and returns the 'build function'
+  
+  // the build function returns itself until
+  // it is called with an {} or undefined
+  buildFn = buildFn(optionFn) 
+  buildFn = buildFn('optionB', true)
+
+  var output = buildFn({data: [1,2,3]}) // executed the final rendered column
+
+```
 
 
 ### Getting started
