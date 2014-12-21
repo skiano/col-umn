@@ -29,9 +29,9 @@ optionFn = function (column) {
 }
 
 //  * Setup the column               * Render the column
-//  |_____                           |________________
-//  |    |                           |               |
-    COL(3)(optionFn)('optionB', true)({data: [1,2,3]});
+//  |_____                           |_________________________
+//  |    |                           |                        |
+    COL(3)(optionFn)('optionB', true)({data: [1,2,3]},callback);
 //        |_________________________|
 //        |
 //        * Setup column operations to execute on render.
@@ -60,7 +60,7 @@ buildFn = buildFn('optionB', true);
 // Execute the final rendered column
 // and return the final data
 
-var output = buildFn({data: [1,2,3]}); 
+buildFn({data: [1,2,3]}, callback); 
 
 ```
 
@@ -70,9 +70,9 @@ __Simple Option setting__
 
 ```js
 
-COL(6)('Awesome', true)();
+COL(6)('Awesome', true);
 
-// Returns:
+// Rendered:
 
 // {
 //   "width": 6,
@@ -99,9 +99,9 @@ COL(6)
     COL(4)
   )(
     COL(2)
-  )();
+  );
   
-// Returns:
+// Rendered:
 
 // {
 //   "width": 6,
