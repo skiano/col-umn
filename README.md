@@ -55,7 +55,9 @@ __breaking down the structure__
   var output = buildFn({data: [1,2,3]}) // executed the final rendered column
 
 ```
+The ``COl`` function returns the _build function_ which is used to set options and nest other columns’ build functions.
 
+-----------------------------------------
 
 ### Getting started
 
