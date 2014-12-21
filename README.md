@@ -1,7 +1,7 @@
 col-umn.js
 ==========
 
-_this is not ready for stable use_
+_Note: this is not ready for stable use_
 
 ``col-umn.js`` uses functions to describe __nested columns__ and the work _(sync or async)_ needed to fill those columns with data.
 
