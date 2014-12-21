@@ -15,8 +15,7 @@ $ npm install col-umn
 
 I often end up writing __JSON__ descriptions of grids for laying out complicated pages. These descriptions can become quite complicated and usually have properties that are essentially pointers to work that needs to be done (for instance what component needs to be used).
 
-By experimenting with solving this problem in a more functional way, I am hoping to make descriptions of complicated layouts and the options associated with that are more compressed and flexible. I am also interested in the layout becoming more a part of the application and less a part of the data.
-
+By approaching this problem in a more functional way, I hope to make descriptions of complicated layouts and the options associated with them more compressed and expressive. I am also interested in thinking of the layout as an application and not as data.
 
 ### The structure
 
